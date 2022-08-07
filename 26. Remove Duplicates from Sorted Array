@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int size=nums.size();
+        int count=0,count1=0;
+        for(int i=0;i<size;i++)
+        {
+            int a=nums[i];
+            for(int j=i+1;j<size;j++)
+            {
+                if(a==nums[j]&&a!=INT_MAX)
+                {
+                    nums[j]=INT_MAX;
+                    count+=1;
+                }
+            }
+        }
+        sort(nums.begin(),nums.end());
+        return size-count;
+    }
+};
