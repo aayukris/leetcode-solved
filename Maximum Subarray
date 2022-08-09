@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int maxSubArray(vector<int>& nums) {
+         int a = nums.size();
+        int max_so_far=INT_MIN;
+        int max_remaining=0;
+        for(int i=0;i<a;i++)
+        {
+            max_remaining+=nums[i];
+            
+            if(max_remaining>max_so_far)
+            {
+                max_so_far=max_remaining;
+            }
+            
+            if(max_remaining<0)
+            {
+                max_remaining=0;
+            }
+        }
+        return max_so_far;
+    }
+};
+
+
+//Refer to Kadane’s Algorithm. This sum is solved using his algorithm
