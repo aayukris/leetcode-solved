@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+         vector<int> nums1;
+     int l = 0;
+        int r = numbers.size()-1;
+        while(l!=r)
+        {
+           int sum = numbers[l]+numbers[r];
+            if(sum==target)
+            {
+                nums1.push_back(l+1);
+                nums1.push_back(r+1);
+            }
+            if(sum<target)
+                l++;
+            else
+                r--;
+        }
+           
+        return nums1;
+    }
+};
